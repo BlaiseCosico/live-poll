@@ -1,0 +1,52 @@
+<%- include('header'); -%>
+
+<head>
+    <title>Create Poll</title>
+    <link rel="stylesheet" href="/css/answer_poll.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script>
+        //get ejs object and put it to dom for external js access
+        $(document).ready(function (){            
+            var room = "<%= roomID %>";
+            $('#room').val(room);
+            console.log(room);
+            $('#pollURL').val('localhost:8888/student/poll/'+room);
+        });
+    </script>
+    <script type ="text/javascript" src="/js/answer_poll.js"></script>
+
+</head>
+
+
+<body>
+    <input type="hidden" value="" id="room">
+    <body class="container-fluid">
+        <h2>Answer Poll</h2>
+        <h4>Answer polls and see results in real-time.</h4>
+        <div class="container mt-sm-5 my-1">
+            <div class="question ml-sm-5 pl-sm-5 pt-2">
+                <p class="instruction"><i>Read the question carefully and select your answer</i></p>
+                <form action="/poll-result/<%= roomID %>" method="GET">
+                <div class="py-2 h5" id="question"><b>Q. Wait for teacher to fill the question.</b></div>
+                    
+                    <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options"> 
+                        <label class="options" id="label_option1">Option
+                            <input type="radio" name="option" id="option1" value=""> <span class="checkmark"></span> 
+                        </label>
+                    </div>
+                    
+            </div>
+                
+                <div class="d-flex align-items-center ml-sm-5 pt-2">
+                    <div id="vote"> <button class="btn btn-success" id="vote-btn" disabled>Vote</button> </div>
+                </div>
+                
+            </form>
+
+            
+        </div>
+        
+    </body>  
+</body>
+</html>

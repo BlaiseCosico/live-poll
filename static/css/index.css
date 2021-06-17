@@ -1,0 +1,29 @@
+body {
+  background-color: #333;
+}
+
+
+.span6 {
+    background-color: rgb(33, 33, 33);
+    margin: auto;
+    margin-top: 50px;
+    color: #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    font-family: 'Montserrat', sans-serif;
+    max-width: 1200px;
+}
+
+
+#start{
+    margin: 20px;
+    padding: 10px 30px;
+}
+
+img {
+    display: block;
+    border-radius: 8px;
+    max-width: 70%;
+    height: auto;
+    margin: auto;
+  }

@@ -1,0 +1,77 @@
+body {
+    background-color: #333;
+}
+
+.container {
+    background-color: rgb(33, 33, 33);
+    margin: auto;
+    margin-top: 50px;
+    color: #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    font-family: 'Montserrat', sans-serif;
+    max-width: 900px;
+}
+
+#content{
+    border-bottom: #444 solid 2px;
+}
+
+.form-control{
+    background-color: #17141e;
+    border: none;
+    margin: 5px;
+}
+.form-control:focus {
+    background-color: #17141e;
+}
+
+#test{
+    display: inline-flex;
+    position: relative;
+    width:100%;
+    margin-bottom: 10px;
+}
+
+#restart{
+    position: absolute;
+    right: 5px;
+    color: #26bc44;
+}
+
+#pollURL{
+    width: 300px;
+}
+
+.copyText{
+    margin: 20px;
+    padding-bottom: 20px;
+}
+
+.remove{
+    display:none;
+}
+
+.input-group:hover .remove {
+    display:block;  
+ }
+
+ .input-group:focus .remove {
+    display:block;  
+ }
+
+#add-btn{
+     margin: 20px 0 20px 0;
+     display: block;
+     color: #26bc44;
+}
+
+#start-btn{
+    margin: 20px 0 20px 0;
+    width: 100%;
+}
+
+#show-results-btn{
+    margin: 20px 0 20px 0;
+    width: 100%;
+}

@@ -1,0 +1,41 @@
+<%- include('header'); -%>
+
+<head>
+    <title>Sockets</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type ="text/javascript">
+        $(document).ready(function (){
+            
+            var socket = io();
+            
+            //when start button is clicked, generate room ID and it creates a socket room
+            $('#start').click(function() {
+                console.log(socket.id);
+                socket.emit('create_room', {socket_id:  socket.id});
+            });
+            
+            //gets generated room id and redirects
+            socket.on('generate_id', function (data) {
+                window.location.href='/teacher/poll/'+data.roomID;
+            });
+
+         })
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="span6 text-center">
+               <h3>One-Link Instant Live Polls</h3>
+               <p>Create multiple polls with one link and see results in real-time!</p>
+               <button id="start" class="btn btn-success"> Get Started </button> 
+               <img src="/test-bg-2.png">
+            </div>
+        </div>
+    </div>  
+</body>
+</html>
+

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <link rel="stylesheet" href="/css/result.css">
+    <script>
+      //get ejs object and put it to dom for external js access
+      $(document).ready(function (){            
+          var room = "<%= roomID %>";
+          $('#room').val(room);
+          console.log(room);
+          
+      });
+  </script>
+
+  <script src="/js/results.js"></script>
+  </head>
+  <body>
+    
+    <input type="hidden" id="room" value= "">
+    <a href="/teacher/poll/<%= roomID %>">Back</a>
+
+    <div class="container">
+      
+      <div class="skills" id="skills-container"></div>
+      
+    </div>
+    <div class="container">
+      <button id="new-poll" class="btn btn-success"><i class="bi bi-plus"></i> Create New Poll </button>
+    </div>
+
+  </body>
+</html>
